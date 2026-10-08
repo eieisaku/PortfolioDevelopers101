@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="\Logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="src\index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Mitr&family=Pridi:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav id="navbar"
+      class="bg-[#027BE6] nav-anim w-full h-[100px] px-4 flex justify-between items-center shadow-xl lg:w-full md:px-10 lg:shadow-md lg:fixed lg:top-0 lg:left-0 lg:right-0 lg:z-50">
+      <div class="px-5 ">
+        <img class=" object-cover w-full h-full max-w-[100px]" src="public\Logo.svg" alt="Logo">
+      </div>
+      <button id="menu" class="relative p-5 lg:hidden">
+        <img src="src\assets\menu-white.svg" alt="menu">
+      </button>
+      <div id="menuNav"
+        class="flex justify-center top-28 right-0 w-full lg:block lg:w-[25em] lg:relative lg:top-0 nav-anim hidden z-40">
+        <div id="mobileMenu"
+          class="flex flex-col w-[80%] rounded-lg justify-center gap-10 py-10 bg-white text-black text-center font-medium border-b-indigo-500 lg:bg-transparent lg:text-white lg:flex-row lg:font-normal lg:w-full lg:h-5-auto ">
+          <a class="text-[#027BE6] font-medium lg:text-[#FEE100] lg:border-b-2 lg:border-b-[#FEE100] lg:mr-[#FEE100]"
+            href="#home">Home</a>
+          <a class="font-medium underline-hover hover:text-[#FEE100]" href="#about">About me</a>
+          <a class="font-medium underline-hover hover:text-[#FEE100]" href="#Project">Project</a>
+          <a class="font-medium underline-hover hover:text-[#FEE100]" href="#Certificates"> Certificates</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+  <main class="bg-[#027BE6]">
+    <section id="home" class="h-[956px] w-full bg-[#027BE6] flex flex-col lg:p-15 lg:grid lg:grid-cols-2 p-3 lg:grid-rows-2 lg:gap-4 
+    lg:grid-rows-[0.75fr_0.25fr_1fr]">
+      <div id="front" class="max-w-xl [&>*]:text-[5em] pt-5 lg:text-[2em]">
+        <h1 class="font-doppio text-white fade-up">Portfolio</h1>
+        <h2
+          class="font-doppio text-transparent [-webkit-text-stroke:2px_white] whitespace-nowrap overflow-hidden border-r-4 border-white animate-typing">
+          Front-end.</h2>
+      </div>
+      <p class="text-white text-[20px] fade-up animation-delay: 300ms font-light py-10 lg:rows-[2/3] lg:col-[1/2]">
+        Welcome to my portfolio — a collection of UX/UI and Front-end projects where design meets code.</p>
+      <div
+        class="flex justify-center fade-up animation-delay: 300ms lg:items-start lg:justify-start lg:rows-[3/3] lg:col-[1/2]">
+        <a href="Project.html"
+          class="bg-[#FEE100] shadow-lg shadow-cyan-500/50 transition duration-300 ease-in-out  hover:hover:scale-105 px-40 py-3 rounded-full transition cursor-pointer">
+          <span>Project</span></a>
+      </div>
+      <img
+        class="object-cover w-full h-[100%] md:h-[50%] lg:max-w-full lg:h-[100%] lg:max-h-screen lg:row-[2/4] lg:col-[2/3] xl:row-[1/4]"
+        src="src\assets\profile.svg" alt="Profile">
+    </section>
+    <section id="about"
+      class="h-[950px] w-full flex flex-col relative rounded-t-4xl bg-linear-to-r from-[#1F1F1F] to-[#343434] text-white mx-auto animated-element stack will-change-scroll">
+      <h2 class="font-doppio text-6xl text-center my-8 autoshow">About me</h2>
+      <div id="track" class="no-scrollbar scrollbar-thumb-slate-600/60 flex justify-start gap-20 overflow-x-auto lg:overflow-hidden scroll-smooth py-15  mx-auto 
+         lg:w-[70%] lg:flex lg:flex-col lg:justify-center snap-x" >
+        <article class="shrink-0 w-full px-4 lg:flex lg:row-auto lg:gap-8 lg:items-center imagereveal card snap-center"
+          style="scroll-snap-align: start;">
+          <div class="lg:flex lg:justify-center lg:w-full">
+            <img class="w-full h-[14em] object-cover rounded-4xl lg:w-[300rem] imagereveal" src="src\assets\imagemine.svg"
+              alt="Profile">
+          </div>
+          <p class="text-center indent-8 text-ellipsis mt-8 lg:px-5 lg:w-full">4th-year student with a background in
+            UX/UI
+            Design and a strong foundation in design and animation. While studying UX/UI, I became
+            interested in how designs turn into real code, and started self-teaching Front-end Development
+            (HTML, CSS, JavaScript).This design background gives me a unique edge in building interfaces,
+            and I'm eager to keep learning and collaborate with teams to create user-centered products.</p>
+        </article>
+        <article class="shrink-0 w-full px-4 flex flex-col lg:flex-row lg:items-center card snap-center"
+          style="scroll-snap-align: start;">
+          <div class="lg:flex lg:justify-start">
+            <img src="https://www.dpu.ac.th/frontend-images/logo/dpu-logo-color.svg" alt="logo dpu"
+              class="w-full h-[14em] object-contain rounded-lg bg-white lg:w-[50%]">
+          </div>
+          <div class="flex flex-col text-center lg:text-left lg:justify-center lg:w-[50%]">
+            <h3 class="text-3xl font-bold py-5">Education</h2>
+              <p class="text-xl font-bold">DhurakijPundit University</p>
+              <p class="text-xl">College of Creative Design & Entertainment Technology</p>
+              <p>Game Design and Development <br> 2022 -2026 | 3.68 GPAX</p>
+          </div>
+        </article>
+      </div>
+      <div class="flex gap-8 mt-8 mb-8 justify-center lg:hidden">
+        <button id="prevBtn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center
+                     hover:bg-gray-50 transition disabled:opacity-30 disabled:cursor-not-allowed">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button id="nextBtn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center
+                     hover:bg-gray-50 transition disabled:opacity-30 disabled:cursor-not-allowed">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      <div id="slindinfo" class="absolute bottom-1 w-full ">
+        <div class="flex justify-center gap-5">
+          <button id="btnskill" class="text-3xl text-center font-bold pb-5 px-5 rounded-t-lg">Skills</button>
+          <button id="btncontact" class="text-3xl text-center font-bold pb-5 px-5 rounded-t-lg">Contact</button>
+        </div>
+        <div class="overflow-x-auto m-auto carousel h-25 bg-[#1F1F1F]">
+          <div id="scrollskills" class="py-4 flex gap-20 animate-scroll items-center justify-center-safe">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/html5/default.svg" alt="HTML5"
+              width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/css/default.svg" alt="CSS"
+              width="55" height="55" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tailwindcss/default.svg"
+              alt="Tailwind CSS" width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/javascript/default.svg"
+              alt="JavaScript" width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" alt="React"
+              width="60" height="60" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/nodejs/default.svg" alt="Node.js"
+              width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg" alt="GitHub"
+              width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/typescript/default.svg"
+              alt="TypeScript" width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" alt="Figma"
+              width="40" height="40" />
+
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/html5/default.svg" alt="HTML5"
+              width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/css/default.svg" alt="CSS"
+              width="55" height="55" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tailwindcss/default.svg"
+              alt="Tailwind CSS" width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/javascript/default.svg"
+              alt="JavaScript" width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" alt="React"
+              width="60" height="60" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/nodejs/default.svg" alt="Node.js"
+              width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg" alt="GitHub"
+              width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/typescript/default.svg"
+              alt="TypeScript" width="50" height="50" />
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" alt="Figma"
+              width="40" height="40" />
+          </div>
+          <div id="scrocontact" class="hidden">
+            <a href="https://www.instagram.com/i_knxtt/" target="_blank" class="flex gap-2 items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+              </svg>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/i.knxtt" target="_blank" class="flex gap-2 items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <title>baseline-facebook</title>
+                <path fill="currentColor"
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+              </svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Project" class="bg-[#054d8d] h-[850px] w-full p-4 flex flex-col gap-5">
+      <div>
+        <h2 class="font-doppio text-6xl text-center text-white autoshow">Project</h2>
+      </div>
+      <div id="track"
+        class="w-full h-[40rem] bg-[#f5f4f5] rounded-4xl flex flex-col justify-center content-center self-center p-5 autoshow">
+        <article>
+
+        </article>
+      </div>
+    </section>
+    <section id="Certificates" class="h-[850px] w-full p-4 flex flex-col bg-linear-to-r from-[#1F1F1F] to-[#343434]">
+      <h2
+        class="text-center bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text text-5xl font-extrabold text-transparent mb-5 autoshow">
+        Certificates
+      </h2>
+      <div
+        class="w-full h-[40rem] bg-[#f5f4f5] rounded-4xl flex flex-col justify-center content-center self-center p-5 autoshow">
+        <div class="flex gap-8 overflow-x-auto m-auto carousel scrollbar-thumb-slate-900/60 ">
+          <img src="src\assets\เริมต้นสร้างและแสดงเนือหาของเว็บไซต์ด้วย HTML.jpg" alt="Certificates">
+          <img src="src\assets\ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS.jpg" alt="Certificates">
+          <img src="src\assets\เพิมลูกเล่นให้กับเว็บไซต์ด้วย JavaScript.jpg" alt="Certificates">
+          <img src="src\assets\ปูพืนฐานการเขียนโค้ดด้วย TypeScript.jpg" alt="Certificates">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="w-full h-50 bg-[#1F1F1F] ">
+    <h2 class="text-center text-xl font-medium text-white text-center">Contact</h2>
+  </footer>
+  <script type="module" src="/src/main.jsx"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
