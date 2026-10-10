@@ -2,14 +2,16 @@ import "./Dashboard.css";
 import { useState,useEffect } from "react";
 import Calenderboard from "./boardcalender";
 import Projectlist from "./Projectlist";
+import GreetingCard from "./GreetingCard";
 
 function Dashboard() {
   const [theme, setTheme] = useState("light");
   const [name, setName] = useState("Guresh");
+ 
 
 
   return (
-    <div className="dashboard">
+    <div className="dashboard" id="home">
       <div className="search-bar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,9 +39,7 @@ function Dashboard() {
           </svg>
         </button>
       </div>
-      <div className="dashboard__content">
-        <h2>Good morning, {name}!</h2>
-      </div>
+      <GreetingCard/>
       <div className="dashboard__My-Current-Project">
         <h2>My Current Project</h2>
         <projectlist/>

@@ -3,6 +3,7 @@ import "./Header.css";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [page, setPage] = useState("home");
 
   // กันหน้าเว็บเลื่อนตอนเมนูเปิดอยู่
   useEffect(() => {
@@ -33,7 +34,7 @@ function Header() {
       <nav id="nav-menu" className={`navbar__menu ${open ? "is-open" : ""}`}>
         <ul>
           <li>
-            <a href="#home">
+            <a href="#home" className={page === "home" ? "active" : ""}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -48,7 +49,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#projects">
+            <a href="#projects" className={page === "project" ? "active" : ""}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -62,8 +63,8 @@ function Header() {
               Projects
             </a>
           </li>
-          <li>
-            <a href="#todo">
+          <li >
+            <a href="#todo" className={page === "todo" ? "active" : ""}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -79,7 +80,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="#calender">
+            <a href="#calender" className={page === "calender" ? "active" : ""}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -94,7 +95,8 @@ function Header() {
             </a>
           </li>
         </ul>
-        <a href="index.html" className="navbar__portfolio">
+        <div className="nav_footer">
+          <a href="index.html" className="navbar__portfolio">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -116,6 +118,7 @@ function Header() {
         </a>
         <div className="w-3xs h-20 bg-[#142D55] rounded-lg p-2">
           <p className="text-white text-center py-2">Small steps make big progress</p>
+        </div>
         </div>
       </nav>
     </header>

@@ -7,10 +7,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
   border-radius: 21px;
   padding:16px;
   background: #14233F;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .navbar__logo {
@@ -55,10 +57,22 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* เดสก์ท็อป: แสดงเมนูแนวนอน */
+/* เดสก์ท็อป: แสดงเมนูแนวตั้ง*/
+#nav-menu{
+  height: 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .nav_footer {
+    gap: 5px;
+    display: flex;
+  flex-direction: column;
+  }
+}
 .navbar__menu ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
   width: 100%;
   height: auto;
@@ -69,11 +83,39 @@
   a {
     display: flex;
     align-items: center;
+    width: 8rem;
     gap: 8px;
     text-decoration: none;
     color: #ececec;
   }
 }
+.navbar__menu ul a.active  {
+  background-color:  #3A4EC9;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.navbar__menu ul a{
+  position: relative;
+}
+
+.navbar__menu ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: #ececec;
+  transition: width 0.3s ease;
+}
+
+.navbar__menu ul a:hover::after {
+  width: 100%;
+  border-bottom: 2px solid #3A4EC9;;
+  transition: width 0.5s ease;
+}
+
 
 .navbar__portfolio{
   display: flex;
@@ -93,9 +135,7 @@
   color: #e9edf5;
   border-color: #14233F;
 }
-.navbar__menu ul a:hover {
-  color: #dfac04;
-}
+
 
 /* มือถือ */
 @media (max-width: 768px) {
