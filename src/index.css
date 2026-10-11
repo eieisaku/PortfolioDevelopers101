@@ -6,28 +6,43 @@
   --animate-typing: typing 1s steps(10) forwards, blink 0.7s step-end infinite;
   --animate-scroll: scroll 22s linear infinite;
 }
+
 /* navigation */
-html { scroll-behavior: smooth; }
-section { scroll-margin-top: 70px; }  /* ใส่เท่าความสูง nav */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+/* ใส่เท่าความสูง nav */
 
 /* ถ้า nav ติดอยู่บนสุดตลอด */
-.nav { position: fixed; top: 0; width: 100%; z-index: 100; }
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
 
 /* ผู้ใช้ที่ปิด animation ในระบบ */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* #home {
   position: sticky;
 } */
 @media (max-width: 1024px) {
- 
+
   #menuNav {
-  position: fixed;
-  top: 5rem;
-  z-index: 1000;
-}
+    position: fixed;
+    top: 5rem;
+    z-index: 1000;
+  }
 }
 
 #home::after {
@@ -269,33 +284,52 @@ section { scroll-margin-top: 70px; }  /* ใส่เท่าความสู
 /* section Animation */
 
 
-.animated-element {
-  animation: revealContent auto linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 100%;
-}
-
-/* @keyframes revealContent {
-  0% {
-    transform: translateY(-70vh);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-} */
-
 @media (min-width: 1280px) {
+  #about {
+    --totle-cards: 2;
+    /* overflow: hidden;
+    transform-origin: top center;
+    top: calc(var(--index) * 20px); */
+       
+  }
 
-.card {
-  position: sticky;
-  top: calc(32px + var(--i) * 20px);  /* แต่ละใบหยุดต่ำลงทีละ 20px */
-  height: 70svh;
-  margin-bottom: 40px;
-  border-radius: 24px;
-  overflow: hidden;                    /* ใส่ที่ card ได้ แต่อย่าใส่ที่ .stack */
-  background: #111;
-  box-shadow: 0 -8px 30px rgba(0,0,0,.35);
-  transform-origin: top center;
+  #track {
+    max-width: 900px;
+    height: 100rem;
+    width: 100%;
+    gap: 30rem ;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .card {
+    transform-origin: top center;
+    top: calc(var(--index) * 20px);
+    position: sticky;
+    width: 100%;
+    border-radius: 24px;
+    background: #916666;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, .35);
+  }
+
+  #card1 {
+    --index: 1;
+    /* animation: stacking-1 linear forwards;
+    animation-timeline: view();
+    animation-range: exit-crossing 0% exit-crossing 367px; */
+  }
+
+  #card2 {
+    --index: 2;
+    
+  }
+
 }
+
+@keyframes stacking-1 {
+  to {
+    transform: scale(0.8);
+  }
 }

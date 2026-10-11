@@ -64,9 +64,8 @@
     <section id="about"
       class="h-[950px] w-full flex flex-col relative rounded-t-4xl bg-linear-to-r from-[#1F1F1F] to-[#343434] text-white mx-auto animated-element stack will-change-scroll">
       <h2 class="font-doppio text-6xl text-center my-8 autoshow">About me</h2>
-      <div id="track" class="no-scrollbar scrollbar-thumb-slate-600/60 flex justify-start gap-20 overflow-x-auto lg:overflow-hidden scroll-smooth py-15  mx-auto 
-         lg:w-[70%] lg:flex lg:flex-col lg:justify-center snap-x" >
-        <article class="shrink-0 w-full px-4 lg:flex lg:row-auto lg:gap-8 lg:items-center imagereveal card snap-center"
+      <div id="track" class="no-scrollbar scrollbar-thumb-slate-600/60 flex justify-start gap-20 overflow-x-auto scroll-smooth px-full" >
+        <article id="card1" class="shrink-0 w-full px-4 lg:flex lg:row-auto lg:gap-8 lg:items-center imagereveal card snap-center cardsContainer"
           style="scroll-snap-align: start;">
           <div class="lg:flex lg:justify-center lg:w-full">
             <img class="w-full h-[14em] object-cover rounded-4xl lg:w-[300rem] imagereveal" src="src\assets\imagemine.svg"
@@ -79,7 +78,7 @@
             (HTML, CSS, JavaScript).This design background gives me a unique edge in building interfaces,
             and I'm eager to keep learning and collaborate with teams to create user-centered products.</p>
         </article>
-        <article class="shrink-0 w-full px-4 flex flex-col lg:flex-row lg:items-center card snap-center"
+        <article id="card2" class="shrink-0 w-full px-4 flex flex-col lg:flex-row lg:items-center card snap-center" 
           style="scroll-snap-align: start;">
           <div class="lg:flex lg:justify-start">
             <img src="https://www.dpu.ac.th/frontend-images/logo/dpu-logo-color.svg" alt="logo dpu"
@@ -107,7 +106,7 @@
           </svg>
         </button>
       </div>
-      <div id="slindinfo" class="absolute bottom-1 w-full ">
+      <div id="slindinfo" class="absolute bottom-0 w-full ">
         <div class="flex justify-center gap-5">
           <button id="btnskill" class="text-3xl text-center font-bold pb-5 px-5 rounded-t-lg">Skills</button>
           <button id="btncontact" class="text-3xl text-center font-bold pb-5 px-5 rounded-t-lg">Contact</button>

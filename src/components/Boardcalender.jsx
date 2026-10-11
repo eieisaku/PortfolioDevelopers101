@@ -1,12 +1,14 @@
 import { useState } from "react";
+import "./Boardcalender.css"
 
 
 function calenderboard() {
   const [calender, setCalender] = useState(new Date());
 
   return (
-    <>
-      <h2>{calender.toLocaleDateString()}</h2>
+    <div className="Body_cal">
+      <div className="calender-contatiner">
+        <h2>{calender.toLocaleDateString()}</h2>
       <button
         className="calender-btn"
         id="prev-month"
@@ -63,7 +65,8 @@ function calenderboard() {
         <h3>Events</h3>
         <ul className="event-list">{/* Event items would go here */}</ul>
       </div>
-    </>
+      </div>
+    </div>
   );
 }
 

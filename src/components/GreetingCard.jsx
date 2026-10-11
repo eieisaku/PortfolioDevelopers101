@@ -55,8 +55,7 @@ export default function GreetingCard({ name }) {
   return (
     <section
       className="greeting-card"
-      style={{ backgroundImage: `url(${period.image})` }}
-    >
+      style={{ backgroundImage: `url(${period.image})` }}>
       <div className="greeting-card__content">
         <h2>
           {period.greeting}, {name}

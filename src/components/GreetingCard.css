@@ -1,4 +1,4 @@
-.dashboard__content {
+.greeting-card {
   display: flex;
   flex-direction: column;
   grid-column: 1 / 2;
@@ -9,5 +9,9 @@
   background-repeat: no-repeat;
   border-radius: 10px;
   padding: 1rem;
+  
+}
+
+.greeting-card__content{
   
 }
