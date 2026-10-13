@@ -11,7 +11,7 @@ function Dashboard() {
 
 
   return (
-    <div className="dashboard" id="home">
+    <div className="dashboard" id="home-DB">
       <div className="search-bar">
         <svg
           xmlns="http://www.w3.org/2000/svg"

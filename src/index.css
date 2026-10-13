@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  scrollbar-color: #86a4f7 #383851;
+  --bg-color1: linear-gradient(0.25turn, #1F1F1F, #343434);
+}
+
 @theme {
   --font-doppio: "Doppio One", sans-serif;
   --font-Fira: "Fira Sans", sans-serif;
@@ -7,41 +12,17 @@
   --animate-scroll: scroll 22s linear infinite;
 }
 
-/* navigation */
 html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: 70px;
-}
 
-/* ใส่เท่าความสูง nav */
-
-/* ถ้า nav ติดอยู่บนสุดตลอด */
-.nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
-
-/* ผู้ใช้ที่ปิด animation ในระบบ */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* #home {
-  position: sticky;
-} */
 @media (max-width: 1024px) {
 
   #menuNav {
+    align-items: center;
     position: fixed;
-    top: 5rem;
-    z-index: 1000;
+    z-index: 10;
   }
 }
 
@@ -53,62 +34,11 @@ section {
   background-image: radial-gradient(#ffffff25 1px, transparent 1px);
   background-size: 12px 12px;
   mask-image: linear-gradient(90deg, #000, transparent 42%);
-  z-index: -1;
+  z-index: 1;
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
-}
-
-.group {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-self: center;
-  gap: 10em;
-  animation: scroll 22s linear infinite;
-}
-
-#slindinfo {}
-
-#btncontact {
-  background-color: #1F1F1F;
-  cursor: pointer;
-}
-
-#btnskill {
-  background-color: #1F1F1F;
-  cursor: pointer;
-
-}
-
-/* social */
-
-.social {
-  width: 52px;
-  height: 52px;
-  background-color: #1F1F1F;
-  display: flex;
-  gap: 1em;
-  overflow: hidden;
-  padding: 5px;
-  border-radius: 14px;
-  color: white;
-  text-decoration: none;
-  transition: width 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  align-items: center;
-  justify-content: center;
-}
-
-.social:hover {
-  width: 150px;
-  background-color: #3B82F6;
-  border-color: #3B82F6;
-}
-
-.icon {
-  width: 40px;
-  height: 40px;
 }
 
 /* Underline Hover Effect */
@@ -189,7 +119,7 @@ section {
   }
 
   100% {
-    width: 5em;
+    width: 4.5em;
   }
 }
 
@@ -282,54 +212,70 @@ section {
 }
 
 /* section Animation */
+.sectionfram {
+  position: sticky;
+  top: 0;
+}
+
 
 
 @media (min-width: 1280px) {
-  #about {
-    --totle-cards: 2;
-    /* overflow: hidden;
-    transform-origin: top center;
-    top: calc(var(--index) * 20px); */
-       
+
+  #home {
+    --index:1;
+    position: sticky;
+    top: 0;
+  }
+
+  #about{
   }
 
   #track {
-    max-width: 900px;
-    height: 100rem;
-    width: 100%;
-    gap: 30rem ;
+    transform-origin: top center;
+    --total-cards: 2;
+    --card-height: calc(100% / var(--total-cards));
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .card {
-    transform-origin: top center;
-    top: calc(var(--index) * 20px);
-    position: sticky;
+    align-items: center;
     width: 100%;
-    border-radius: 24px;
-    background: #916666;
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, .35);
+    height: fit-content;
+    margin-bottom: 10rem;
+    gap: 30px;
+    view-timeline-name: --cardsContainer;
   }
+   .card {
+      --target-brightness: 50%;
+      transform-origin: top center;
+      position: sticky;
+      top: calc(var(--index) * 20px);
+
+      animation: stacking linear forwards;
+      animation-timeline: --cardsContainer;
+      animation-range-start: exit-crossing calc(var(--card-height) * (var(--index) - 1));
+      animation-range-end: exit-crossing calc(var(--card-height) * var(--index));
+
+      width: 50rem;
+      height: fit-content;
+      border-radius: 24px;
+      background: linear-gradient(0.25turn, #1F1F1F, #343434);
+      box-shadow: 0 0 30px rgba(0, 0, 0, .35);
+    }
+
 
   #card1 {
     --index: 1;
-    /* animation: stacking-1 linear forwards;
-    animation-timeline: view();
-    animation-range: exit-crossing 0% exit-crossing 367px; */
   }
 
   #card2 {
     --index: 2;
-    
+    --target-brightness: 100%;
   }
 
 }
 
-@keyframes stacking-1 {
+@keyframes stacking {
   to {
-    transform: scale(0.8);
+    transform: scale(calc(1 - 0.1 * (var(--total-cards) - var(--index))));
+    filter: brightness(var(--target-brightness));
   }
 }
