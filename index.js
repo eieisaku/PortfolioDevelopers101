@@ -12,21 +12,6 @@ const hookNav = () => {
 }
 hookNav();
 
-///////////////////////////////  nav ///////////////////////////////////////////
-const links = document.querySelectorAll('.nav a');
-const sections = document.querySelectorAll('section[id]');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      links.forEach(a => a.classList.toggle(
-        'active', a.getAttribute('href') === '#' + entry.target.id
-      ));
-    }
-  });
-}, { rootMargin: '-50% 0px -50% 0px' });  // นับเมื่อ section อยู่กลางจอ
-
-sections.forEach(s => observer.observe(s));
 
 ////////////////////////////////// button nextstate ///////////////////////////////////////////
 
@@ -78,3 +63,5 @@ const btnabout = () => {
     })
 }
 btnabout();
+
+

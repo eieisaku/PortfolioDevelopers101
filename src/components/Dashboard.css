@@ -17,33 +17,19 @@
 
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  background-color: #F2F5FC;
-  border-radius: 10px;
-}
-.search-box input::placeholder {
-  color: #6b7280;
-}
 .theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  justify-content:end;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   gap: 0.5rem;
   padding: 0.5rem;
+  width: fit-content;
   background-color: #F2F5FC;
   border: 1px solid #121114; 
   border-radius: 10px;
   cursor: pointer;
 }
-
 
 .dashboard__Learning-Progress {
   display: flex;
@@ -76,6 +62,7 @@
   background-color: #F2F5FC;
   border-radius: 10px;
   padding: 1rem;
+
 }
 
 @media (max-width: 768px) {

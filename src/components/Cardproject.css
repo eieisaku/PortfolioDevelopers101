@@ -1,0 +1,21 @@
+#cardject {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+ button{
+  padding: 5px;
+  width: 50%;
+  background-color: #FEE100;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+ }
+}
+
+#cardject button:hover{
+  transform: scale(1.1);
+}
