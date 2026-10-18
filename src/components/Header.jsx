@@ -13,7 +13,7 @@ function Header() {
       <a href="#home" className="navbar__logo">
         <img src="public\Logo.svg" alt="logo" />
       </a>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <button id="menu-toggle" className="text-white" onClick={togglemenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ function Header() {
         {/* moblie menu */}
 
         {isopen ? (
-          <ul className="flex flex-col lg:hidden">
+          <ul className="lg:hidden flex flex-col bg-[#14233F] justify-center sticky t-0">
             <li>
               <a href="#home">Home</a>
             </li>

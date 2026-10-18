@@ -233,7 +233,7 @@ nav {
   }
 
   #project {
-    view-timeline-name: --project;
+    view-timeline-name:  calc(100);
     view-timeline-axis: block;
     height: 100vh;
     z-index: 2;
@@ -275,6 +275,7 @@ nav {
   #track {
     --total-cards: 2;
     --card-height: calc(100% / var(--total-cards));
+    view-timeline-name: --cardsContainer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -293,7 +294,7 @@ nav {
     top: calc(var(--index) * 20px);
 
     animation: stacking linear forwards;
-    animation-timeline: view();
+    animation-timeline:--cardsContainer;
     animation-range-start: exit-crossing calc(var(--card-height) * (var(--index) - 1));
     animation-range-end: exit-crossing calc(var(--card-height) * var(--index));
 

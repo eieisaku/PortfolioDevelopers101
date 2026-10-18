@@ -9,10 +9,10 @@
   align-items: center;
   align-content: center;
   border-radius: 21px;
-  padding:16px;
+  padding: 16px;
   background: #14233F;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  
+
 
 }
 
@@ -22,26 +22,28 @@
   text-decoration: none;
   color: #eeeded;
 
-  img{
+  img {
     width: 5em;
     height: 5em;
   }
 }
 
 /* เดสก์ท็อป: แสดงเมนูแนวตั้ง*/
-#nav-menu{
+#nav-menu {
   height: 100rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   .nav_footer {
     gap: 5px;
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
   }
 }
+
 .navbar__menu ul {
- 
+
   list-style: none;
   margin: 0;
   padding: 0;
@@ -55,13 +57,15 @@
     color: #ececec;
   }
 }
-.navbar__menu ul a.active  {
-  background-color:  #3A4EC9;
+
+.navbar__menu ul a.active {
+  background-color: #3A4EC9;
   padding: 5px;
   border-radius: 10px;
   font-weight: 600;
 }
-.navbar__menu ul a{
+
+.navbar__menu ul a {
   position: relative;
 }
 
@@ -78,12 +82,13 @@
 
 .navbar__menu ul a:hover::after {
   width: 100%;
-  border-bottom: 2px solid #3A4EC9;;
+  border-bottom: 2px solid #3A4EC9;
+  ;
   transition: width 0.5s ease;
 }
 
 
-.navbar__portfolio{
+.navbar__portfolio {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,13 +102,27 @@
 }
 
 .navbar__portfolio:hover {
-  background-color: #D74547 ;
+  background-color: #D74547;
   color: #e9edf5;
   border-color: #14233F;
 }
 
 
 /* มือถือ */
-@media (max-width: 768px) {
- 
+@media (max-width: 1023px) {
+  .navbar {
+    position: sticky;
+    width: 100%;
+    height: 5rem;
+    z-index: 100;
+    gap: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 0%;
+    padding: 16px;
+    background: #14233F;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
 }
