@@ -73,6 +73,26 @@ nav {
   animation-delay: 0.15s;
 }
 
+#btn-projectnav.slidedown a  {
+  color: #000;
+}
+
+#navbar.slidedown{
+  position: fixed;
+  background-color: #162d5e;
+  border-radius: 50px;
+  animation: slidedown .3s forwards;
+  
+}
+@keyframes slidedown{
+    from{
+        top: -250px;
+    }
+    to{
+        top: 0;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+}
 /* Auto Show Animation */
 
 .autoshow {
@@ -169,6 +189,28 @@ nav {
 
 /* image */
 
+#projectList{
+  article{
+    animation:imagtranslate linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+  }
+}
+
+@keyframes imagtranslate {
+  from{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition:all ;
+  }
+  to{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
 .imagereveal {
   animation: imageReveal both;
   animation-timeline: view(50% 20%);
@@ -228,20 +270,18 @@ nav {
     height: 100vh;
     transform-origin: top center;
     top: 0;
-    position: sticky;
+    position: stickyq;
 
   }
 
   #project {
-    view-timeline-name:  calc(100);
-    view-timeline-axis: block;
+    position: relative;
     height: 100vh;
     z-index: 2;
-    animation-timeline: --about;
-    animation-range: calc(100% * 2);
+    
+    animation-timeline: --cardsContainer ;;
+    animation-range-start: entry-crossing calc(100% / var(--total-cards));
 
-
-    position: relative;
   }
 
   #certificates {
@@ -252,7 +292,7 @@ nav {
 
     animation: returnchangcolorbg linear both;
     animation-timeline: view();
-    animation-range: entry 0% cover 0%;
+    animation-range: entry ;
   }
 
 
@@ -294,8 +334,8 @@ nav {
     top: calc(var(--index) * 20px);
 
     animation: stacking linear forwards;
-    animation-timeline:--cardsContainer;
-    animation-range-start: exit-crossing calc(var(--card-height) * (var(--index) - 1));
+    animation-timeline: view() ;
+    animation-range-start: entry-crossing calc(var(--card-height) * (var(--index) - 1));
     animation-range-end: exit-crossing calc(var(--card-height) * var(--index));
 
     width: 50rem;

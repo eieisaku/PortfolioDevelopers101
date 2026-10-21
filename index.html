@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -21,24 +21,25 @@
 <body>
   <header>
     <nav id="navbar"
-      class="bg-[#027BE6] nav-anim w-full h-25 px-4 z-2 sticky flex justify-between shadow-xl lg:w-full md:px-10 lg:shadow-md lg:sticky lg:top-0 lg:left-0 lg:right-0 ">
+      class="bg-[#027BE6] nav-anim w-full h-25 px-4 z-2 sticky flex justify-between lg:bg-transparent lg:w-full md:px-10 lg:inset-shadow-black lg:absolute ">
       <a href="index.html">
         <img class="object-cover h-full max-w-50 cursor-pointer " src="public\Logo.svg" alt="Logo">
       </a>
       <button id="menu" class="relative p-5 lg:hidden">
         <img src="src\assets\menu-white.svg" alt="menu">
       </button>
-      <div id="menuNav" class="w-full content-center top-28 lg:block lg:relative lg:top-0 nav-anim hidden z-10">
+      <div id="menuNav" class="w-full content-center top-28 lg:block nav-anim z-10 hidden">
         <ul id="mobileMenu"
-          class="flex flex-col w-[80%] rounded-lg justify-center gap-10 py-10 bg-white text-black text-center font-medium border-b-indigo-500 lg:bg-transparent lg:text-white lg:flex-row lg:font-normal lg:w-full lg:h-5-auto ">
-          <li><a class="text-[#027BE6] font-medium lg:text-[#FEE100] lg:border-b-2 lg:border-b-[#FEE100] lg:mr-[#FEE100]"
-            href="#home">Home</a></li>
+          class="flex flex-col w-full rounded-lg justify-center gap-10 py-10 bg-white text-black text-center font-medium border-b-indigo-500 lg:bg-transparent lg:text-white lg:flex-row lg:font-normal lg:w-full lg:h-5-auto ">
+          <li><a
+              class="text-[#027BE6] font-medium lg:text-[#FEE100] lg:border-b-2 lg:border-b-[#FEE100] lg:mr-[#FEE100]"
+              href="#home">Home</a></li>
           <li><a class="font-medium underline-hover hover:text-[#FEE100]" href="#about">About me</a></li>
           <li><a class="font-medium underline-hover hover:text-[#FEE100]" href="#project">Project</a></li>
           <li><a class="font-medium underline-hover hover:text-[#FEE100]" href="#certificates"> Certificates</a></li>
         </ul>
       </div>
-
+      <button id="btn-projectnav" class="bg-[#FEE100] p-5 self-center w-fit h-fit  shadow-lg shadow-cyan-500/50 transition duration-300 ease-in-out hover:scale-105 rounded-full cursor-pointer hidden"> project</button>
     </nav>
   </header>
   <main class="bg-[#027BE6]">
@@ -58,43 +59,42 @@
           class="bg-[#FEE100] shadow-lg shadow-cyan-500/50 transition duration-300 ease-in-out  hover:scale-105 px-40 py-3 rounded-full cursor-pointer">
           <span>Project</span></a>
       </div>
-         <img class="object-cover w-full h-full md:h-[50%] lg:max-w-full lg:h-full lg:max-h-screen lg:row-[2/4] lg:col-[2/3] xl:row-[1/4] "
-        src="src\assets\profile.svg" alt="Profile">
+      
     </section>
     <section id="about"
       class="h-237.5 w-full flex flex-col relative rounded-t-4xl bg-linear-to-r from-[#1F1F1F] to-[#343434] text-white mx-auto animated-element stack will-change-scroll lg:h-full lg:w-full progress">
       <h2 class="font-doppio text-6xl text-center my-8 autoshow">About me</h2>
-     
-        <div id="track" class="no-scrollbar flex justify-start gap-20 max-lg:overflow-x-auto scroll-smooth px-full lg:py-5 ">
-          <article id="card1"
-            class="shrink-0 w-full px-4 lg:px-0 lg:gap-8 lg:items-center imagereveal snap-center card "
-            style="scroll-snap-align: start;">
-            <div class="lg:flex lg:justify-center lg:w-full">
-              <img class="w-full h-[14em] object-cover rounded-4xl lg:w-full imagereveal" src="src\assets\imagemine.svg"
-                alt="Profile">
-            </div>
-            <p class="text-center indent-8 text-ellipsis my-8 lg:px-5 lg:w-full lg:text-left">
-              4th-year student with a background in UX/UI
-              Design and a strong foundation in design and animation. While studying UX/UI, I became
-              interested in how designs turn into real code, and started self-teaching Web Development
-              (HTML, CSS, JavaScript).This design background gives me a unique edge in building interfaces,
-              and I'm eager to keep learning and collaborate with teams to create user-centered products.</p>
-          </article>
-          <article id="card2" class="shrink-0 w-full px-4 flex flex-col lg:items-center card lg:h-200"
-            style="scroll-snap-align: start;">
-            <div class="w-full">
-              <img src="https://www.dpu.ac.th/frontend-images/logo/dpu-logo-color.svg" alt="logo dpu"
-                class="w-full h-[14em]  rounded-lg bg-white ">
-            </div>
-            <div class="flex flex-col text-center lg:text-left lg:justify-center lg:w-[50%] lg:my-8">
-              <h3 class="text-3xl font-bold py-5">Education</h2>
-                <p class="text-xl font-bold">DhurakijPundit University</p>
-                <p class="text-xl">College of Creative Design & Entertainment Technology</p>
-                <p>Game Design and Development <br> 2022 -2026 | 3.68 GPAX</p>
-            </div>
-          </article>
-        </div>
-      
+
+      <div id="track"
+        class="no-scrollbar flex justify-start gap-20 max-lg:overflow-x-auto scroll-smooth px-full lg:py-5 ">
+        <article id="card1" class="shrink-0 w-full px-4 lg:px-0 lg:gap-8 lg:items-center imagereveal snap-center card "
+          style="scroll-snap-align: start;">
+          <div class="lg:flex lg:justify-center lg:w-full">
+            <img class="w-full h-[14em] object-cover rounded-4xl lg:w-full imagereveal" src="src\assets\imagemine.svg"
+              alt="Profile">
+          </div>
+          <p class="text-center indent-8 text-ellipsis my-8 lg:px-5 lg:w-full lg:text-left">
+            4th-year student with a background in UX/UI
+            Design and a strong foundation in design and animation. While studying UX/UI, I became
+            interested in how designs turn into real code, and started self-teaching Web Development
+            (HTML, CSS, JavaScript).This design background gives me a unique edge in building interfaces,
+            and I'm eager to keep learning and collaborate with teams to create user-centered products.</p>
+        </article>
+        <article id="card2" class="shrink-0 w-full px-4 flex flex-col lg:items-center card lg:h-200"
+          style="scroll-snap-align: start;">
+          <div class="w-full">
+            <img src="https://www.dpu.ac.th/frontend-images/logo/dpu-logo-color.svg" alt="logo dpu"
+              class="w-full h-[14em]  rounded-lg bg-white ">
+          </div>
+          <div class="flex flex-col text-center lg:text-left lg:justify-center lg:w-[50%] lg:my-8">
+            <h3 class="text-3xl font-bold py-5">Education</h2>
+              <p class="text-xl font-bold">DhurakijPundit University</p>
+              <p class="text-xl">College of Creative Design & Entertainment Technology</p>
+              <p>Game Design and Development <br> 2022 -2026 | 3.68 GPAX</p>
+          </div>
+        </article>
+      </div>
+
       <div class="flex gap-8 mt-8 mb-8 justify-center lg:hidden">
         <button id="prevBtn" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center
                      hover:bg-gray-50 transition disabled:opacity-30 disabled:cursor-not-allowed">
@@ -113,48 +113,10 @@
         <div class="flex justify-center gap-5">
           <button id="btnskill"
             class="bg-[#1F1F1F] text-3xl text-center font-bold pb-5 px-5 rounded-t-lg">Skills</button>
-          <button id="btncontact"
-            class="bg-[#1F1F1F] text-3xl text-center font-bold pb-5 px-5 rounded-t-lg">Contact</button>
         </div>
         <div class="overflow-x-auto m-auto carousel h-25 scrollbar-none bg-[#1F1F1F]">
           <div id="scrollskills" class="py-4 flex gap-20 animate-scroll items-center justify-center-safe">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/html5/default.svg" alt="HTML5"
-              width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/css/default.svg" alt="CSS"
-              width="55" height="55" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tailwindcss/default.svg"
-              alt="Tailwind CSS" width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/javascript/default.svg"
-              alt="JavaScript" width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" alt="React"
-              width="60" height="60" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/nodejs/default.svg" alt="Node.js"
-              width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg" alt="GitHub"
-              width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/typescript/default.svg"
-              alt="TypeScript" width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" alt="Figma"
-              width="40" height="40" />
-
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/html5/default.svg" alt="HTML5"
-              width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/css/default.svg" alt="CSS"
-              width="55" height="55" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tailwindcss/default.svg"
-              alt="Tailwind CSS" width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/javascript/default.svg"
-              alt="JavaScript" width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/react/default.svg" alt="React"
-              width="60" height="60" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/nodejs/default.svg" alt="Node.js"
-              width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/dark.svg" alt="GitHub"
-              width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/typescript/default.svg"
-              alt="TypeScript" width="50" height="50" />
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/figma/default.svg" alt="Figma"
-              width="40" height="40" />
+            
           </div>
           <div id="scrocontact" class="hidden">
 
@@ -166,35 +128,11 @@
       <div>
         <h2 class="font-doppio text-6xl text-center text-white autoshow">Project</h2>
       </div>
-      <ul id="carousel"
-        class="w-full h-160 bg-[#e8e8e8] rounded-4xl flex justify-center content-center overflow-auto self-center p-5 autoshow gap-5">
-        <li>
-          <article id="cardject"
-          class="border-solid border-2 rounded-2xl w-xl bg-[#07182E] text-white overflow-hidden relative">
-          <header>
-            <img src="https://mdn.github.io/shared-assets/images/examples/balloons.jpg" alt="Hot air balloons" width="100%"/>
-            <h2 id="name project" class="text-2xl font-semibold mx-3">Dashbord</h2>
-          </header>
-          <div class="wrap-anywhere mx-3">
-            <p>
-              The idea of reaching the North Pole by means of balloons appears to have
-              been entertained many years ago.
-            </p>
-          </div>
-          <button popovertarget="dashbordlog" class="w-50 h-full rounded-2xl border-b-black">Read</button>
-        </article>
-        </li>
-        <li>
-            <article id="cardject"
-          class="border-solid border-2 rounded-2xl w-xl bg-[#07182E] text-white overflow-hidden relative">
-          <iframe frameborder="0" src="https://itch.io/embed/4369611" width="552" height="167"><a href="https://phxpha10.itch.io/silent-paranoia">Silent  Paranoia by PHXPHA10</a></iframe>
-          <button popovertarget="dashbordlog">Read</button>
-        </article>
-        </li>
-        <dialog id="dashbordlog" popover="auto">
-
-        </dialog>
-      </ul>
+      <div id="projectList"class="w-full h-160 bg-[#e8e8e8] rounded-4xl flex p-5 gap-5 overflow-x-auto snap-x scroll-px-6 autoshow">
+        
+        <!-- <dialog id="dashbordlog" popover="auto">
+        </dialog> -->
+      </div>
       <div class="flex gap-8 mt-8 mb-8 justify-center ">
         <button id="prevBtn" class="w-15 h-15 rounded-full border border-gray-300 flex items-center justify-center
                      hover:bg-gray-50 transition disabled:opacity-30 disabled:cursor-not-allowed">
@@ -215,12 +153,16 @@
         class="text-center bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text text-5xl font-extrabold text-transparent mb-5 autoshow">
         Certificates
       </h2>
-      <div class="w-full h-160 bg-[#e8e8e8] rounded-4xl flex flex-wrap  self-center overflow-hidden p-5 autoshow">
-        <div class="flex gap-8 overflow-x-auto m-auto carousel scrollbar-thumb-slate-900/60  *:max-w-200">
+      <div class="flex justify-center-safe content-center-safe autoshow w-fit">
+        <div class="bg-[#e8e8e8] w-lg h-100 flex rounded-4xl p-5 overflow-hidden self-center gap-8 overflow-x-auto m-auto carousel scrollbar-thumb-slate-900/60  [&_img]:object-cover ">
           <img src="src\assets\เริมต้นสร้างและแสดงเนือหาของเว็บไซต์ด้วย HTML.jpg" alt="Certificates">
           <img src="src\assets\ปรับแต่งและจัดวางสไตล์ของเว็บไซต์ด้วย CSS.jpg" alt="Certificates">
           <img src="src\assets\เพิมลูกเล่นให้กับเว็บไซต์ด้วย JavaScript.jpg" alt="Certificates">
           <img src="src\assets\ปูพืนฐานการเขียนโค้ดด้วย TypeScript.jpg" alt="Certificates">
+        </div>
+        <div class="text-white p-5 mx-5">
+          <h3 class="font-medium text-3xl">future skill</h3>
+          <p></p>
         </div>
       </div>
     </section>

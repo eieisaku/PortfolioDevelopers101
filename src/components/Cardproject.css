@@ -1,12 +1,35 @@
 #cardject {
  display: flex;
  flex-direction: column;
- justify-content: center;
  align-items: center;
- 
-
 }
 
 #cardject button:hover{
   transform: scale(1.1);
+}
+
+.btn-project {
+  padding: 5px;
+  width: 10rem;
+  border-radius: 50px;
+  background-color: #FEE100;
+  color: black;
+}
+
+.btn-project:hover{
+  padding: auto;
+  width: 10rem;
+  border-radius: 50px;
+  background-color: #645a0c;
+  color: whitesmoke;
+  border: 1px solid #FEE100;
+  cursor:pointer
+}
+
+.btn-project-disabled{
+  padding: 5px;
+  width: 10rem;
+  border-radius: 50px;
+  background-color: #333125;
+  cursor:not-allowed
 }
