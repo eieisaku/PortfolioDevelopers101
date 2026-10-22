@@ -9,17 +9,17 @@
 }
 
 .btn-project {
-  padding: 5px;
-  width: 10rem;
-  border-radius: 50px;
+  padding: 12px;
+  width: 20rem;
+  border: 1px solid transparent;
+  border-radius: 22px;
   background-color: #FEE100;
   color: black;
+  margin-bottom: 15px;
+  justify-self: end;
 }
 
 .btn-project:hover{
-  padding: auto;
-  width: 10rem;
-  border-radius: 50px;
   background-color: #645a0c;
   color: whitesmoke;
   border: 1px solid #FEE100;
@@ -27,9 +27,11 @@
 }
 
 .btn-project-disabled{
-  padding: 5px;
-  width: 10rem;
+  padding: 12px;
+  width: 20rem;
   border-radius: 50px;
   background-color: #333125;
+  margin-bottom: 15px;
+  margin-top: 5px;
   cursor:not-allowed
 }
