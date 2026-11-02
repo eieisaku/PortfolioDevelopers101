@@ -49,7 +49,7 @@ updateButtons();
 
 const projectcards = [
     { id: 1, title: "Silent Paranoia", description: "This is a full version of the psychological horror game", thumbnail: "https://img.itch.zone/aW1nLzI3Njg1MjEzLnBuZw==/315x250%23c/s2XHj2.png", toggle: 0 },
-    { id: 2, title: "Dashbord", description: "comiong soon!", thumbnail: "src/assets/Dashbord.png", toggle: 1 }
+    { id: 2, title: "Cart", description: "comiong soon!", thumbnail: "src/assets/Dashbord.png", toggle: 1 }
 ];
 
 const projectDialog = [
@@ -162,4 +162,4 @@ function setAtive (){
     })
 }
 
-window.addEventListener("scroll",setActiveLink)
+window.addEventListener("scroll",setAtive)
