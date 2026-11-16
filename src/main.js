@@ -47,47 +47,54 @@ updateButtons();
 
 ////////////// cards project ////////////////////
 
-const projectcards = [
-    { id: 1, title: "Silent Paranoia", description: "This is a full version of the psychological horror game", thumbnail: "https://img.itch.zone/aW1nLzI3Njg1MjEzLnBuZw==/315x250%23c/s2XHj2.png", toggle: 0 },
-    { id: 2, title: "Cart", description: "comiong soon!", thumbnail: "src/assets/Dashbord.png", toggle: 1 }
+let projectcards = [
+    { id: 1, title: "Silent Paranoia", description: "This is a full version of the psychological horror game", thumbnail: "https://img.itch.zone/aW1nLzI3Njg1MjEzLnBuZw==/315x250%23c/s2XHj2.png", link: "https://phxpha10.itch.io/silent-paranoia", toggle: true },
+    { id: 2, title: "UX/Ui Design app", description: "My 3rd-year university project is a UX/UI design app that uses AI to generate color themes and design elements.", thumbnail: "src/assets/homelogin uxui.png", link: "https://www.figma.com/proto/d2Sk7XD8DKKurXAQz3NzoO/Final-Project?node-id=0-1&t=b8SxgB7c7jrOhaKs-1", toggle: true },
+    { id: 3, title: "My SQL", description: "This project analyzes existing playable games to identify and reverse-engineer their underlying databases.", thumbnail: "src/assets/SQL.png", link: "https://canva.link/9u0r7gsqv40mgmr", toggle: true },
+    { id: 4, title: "3D Modeling", description: "Designed and optimized 3D game assets using a standard game-ready pipeline, ensuring high visual quality while maintaining optimal performance in the game engine.", thumbnail: "src/assets/humen.jpg", link: "https://canva.link/r7dexuojj6ccqhl", toggle: true },
+    { id: 5, title: "Cart", description: "comiong soon!", thumbnail: "src/assets/Dashbord.png", link: "#", toggle: false },
 ];
 
-const projectDialog = [
-    { id: 1, Link: "https://phxpha10.itch.io/silent-paranoia" }
-]
 
 const createCardject = (projectcard) => {
     const projectCard = document.createElement('article');
-    projectCard.className = 'flex flex-col rounded-2xl w-sm min-w-sm bg-[#07182E] text-white overflow-hidden shrink-0 [&_button]:self-center ';
+    projectCard.className = 'flex flex-col rounded-2xl w-sm min-w-sm bg-[#07182E] text-white overflow-hidden shrink-0 [&_button]:self-center [&_button]:justify-self-end';
 
     const projectThumbnail = document.createElement('img');
-    projectThumbnail.className = 'w-full object-cover h-50'
+    projectThumbnail.className = 'w-full object-top object-cover h-50 bg-top mb-3';
     projectThumbnail.src = projectcard.thumbnail;
 
     const projecttitle = document.createElement('h2');
-    projecttitle.className = 'text-2xl font-semibold mx-3 mb-3'
+    projecttitle.className = 'text-2xl font-semibold mx-5 mb-3'
     projecttitle.innerText = projectcard.title;
 
     const headerCard = document.createElement('header')
 
-    const productPrice = document.createElement('div');
-    productPrice.className = 'wrap-anywhere mx-3';
+    const track = document.createElement('div');
+    track.className = 'wrap-anywhere mx-3';
+
+    const cardfooter = document.createElement('div');
+    cardfooter.className = 'wrap-anywhere mx-3';
 
     const productcomment = document.createElement('p')
     productcomment.className = 'mb-3'
     productcomment.innerText = projectcard.description;
 
-    const productbutton = document.createElement('button')
-    productbutton.innerText = 'Read'
-    productbutton.popoverTarget = projectDialog
+    const projectbutton = document.createElement('button')
+    projectbutton.innerText = 'View Project'
+    projectbutton.addEventListener('click', () => {
+        if (projectcard.toggle === true) {
+            window.open(projectcard.link, '_blank');
+        }
+    });
 
-    productbutton.className = projectcard.toggle === 0 ? 'btn-project' : 'btn-project-disabled';
+    projectbutton.className = projectcard.toggle === true ? 'btn-project' : 'btn-project-disabled';
 
-    productcomment.className = projectcard.toggle === 0 ? 'text-white' : 'text-red-500';
+    productcomment.className = projectcard.toggle === true ? 'text-white' : 'text-red-500';
 
-    projectCard.append(headerCard, productPrice, productbutton);
+    projectCard.append(headerCard, track, cardfooter, projectbutton);
     headerCard.append(projectThumbnail, projecttitle);
-    productPrice.append(productcomment);
+    cardfooter.append(productcomment);
 
     document.querySelector('#projectList').appendChild(projectCard)
 };
@@ -100,26 +107,6 @@ const creatcards = () => {
 
 creatcards();
 
-///////////////////////// btn-link ///////////////////////////////
-
-// document.querySelectorAll('.copy').forEach((btn) => {
-//   const original = btn.textContent;
-
-//   btn.addEventListener('click', async () => {
-//     try {
-//       await navigator.clipboard.writeText(btn.dataset.copy);
-//       btn.textContent = 'คัดลอกแล้ว ';
-//     } catch {
-//       btn.textContent = 'คัดลอกไม่สำเร็จ';
-//     }
-//     setTimeout(() => (btn.textContent = original), 2000);
-//   });
-// });
-
-// btn.classList.add('done');
-// setTimeout(() => btn.classList.remove('done'), 2000);
-
-///// a link ////
 
 document.querySelectorAll('a.copy').forEach((link) => {
     const original = link.textContent;
