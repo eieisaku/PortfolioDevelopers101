@@ -214,6 +214,8 @@ nav a:hover {
   background: #FEE100;
   color: #070101;
   cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 5rem;
 }
 
 .btn-project:hover {
@@ -230,6 +232,8 @@ nav a:hover {
   background: #343434;
   color: #858585;
   cursor: not-allowed;
+  margin-top: auto;
+  margin-bottom: 5rem;
 }
 
 

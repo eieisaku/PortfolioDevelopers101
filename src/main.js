@@ -11,7 +11,7 @@ viewmenu.addEventListener('click', () => {
 
 const mainMenu = document.querySelector('#navbar');
 window.addEventListener('scroll', () => {
-    if (this.scrollY > 100) {
+    if (window.scrollY > 100) {
         mainMenu.classList.add('slidedown');
     } else {
         mainMenu.classList.remove('slidedown');
@@ -49,10 +49,10 @@ updateButtons();
 
 let projectcards = [
     { id: 1, title: "Silent Paranoia", description: "This is a full version of the psychological horror game", thumbnail: "https://img.itch.zone/aW1nLzI3Njg1MjEzLnBuZw==/315x250%23c/s2XHj2.png", link: "https://phxpha10.itch.io/silent-paranoia", toggle: true },
-    { id: 2, title: "UX/Ui Design app", description: "My 3rd-year university project is a UX/UI design app that uses AI to generate color themes and design elements.", thumbnail: "src/assets/homelogin uxui.png", link: "https://www.figma.com/proto/d2Sk7XD8DKKurXAQz3NzoO/Final-Project?node-id=0-1&t=b8SxgB7c7jrOhaKs-1", toggle: true },
-    { id: 3, title: "My SQL", description: "This project analyzes existing playable games to identify and reverse-engineer their underlying databases.", thumbnail: "src/assets/SQL.png", link: "https://canva.link/9u0r7gsqv40mgmr", toggle: true },
-    { id: 4, title: "3D Modeling", description: "Designed and optimized 3D game assets using a standard game-ready pipeline, ensuring high visual quality while maintaining optimal performance in the game engine.", thumbnail: "src/assets/humen.jpg", link: "https://canva.link/r7dexuojj6ccqhl", toggle: true },
-    { id: 5, title: "Cart", description: "comiong soon!", thumbnail: "src/assets/Dashbord.png", link: "#", toggle: false },
+    { id: 2, title: "UX/Ui Design app", description: "My 3rd-year university project is a UX/UI design app that uses AI to generate color themes and design elements.", thumbnail: "/homelogin uxui.png", link: "https://www.figma.com/proto/d2Sk7XD8DKKurXAQz3NzoO/Final-Project?node-id=0-1&t=b8SxgB7c7jrOhaKs-1", toggle: true },
+    { id: 3, title: "My SQL", description: "This project analyzes existing playable games to identify and reverse-engineer their underlying databases.", thumbnail: "/SQL.png", link: "https://canva.link/9u0r7gsqv40mgmr", toggle: true },
+    { id: 4, title: "3D Modeling", description: "Designed and optimized 3D game assets using a standard game-ready pipeline, ensuring high visual quality while maintaining optimal performance in the game engine.", thumbnail: "/humen.jpg", link: "https://canva.link/r7dexuojj6ccqhl", toggle: true },
+    { id: 5, title: "Cart", description: "comiong soon!", thumbnail: "/Dashbord.png", link: "#", toggle: false },
 ];
 
 
@@ -107,6 +107,7 @@ const creatcards = () => {
 
 creatcards();
 
+///////////////////////// copy to clipboard //////////////////////////////
 
 document.querySelectorAll('a.copy').forEach((link) => {
     const original = link.textContent;
