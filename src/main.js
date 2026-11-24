@@ -58,7 +58,7 @@ let projectcards = [
 
 const createCardject = (projectcard) => {
     const projectCard = document.createElement('article');
-    projectCard.className = 'flex flex-col rounded-2xl w-sm min-w-sm bg-[#07182E] text-white overflow-hidden shrink-0 [&_button]:self-center [&_button]:justify-self-end';
+    projectCard.className = 'flex flex-col rounded-2xl w-[22rem] min-w-xs bg-[#07182E] text-white overflow-hidden shrink-0 [&_button]:self-center [&_button]:justify-self-end snap-start card-pj';
 
     const projectThumbnail = document.createElement('img');
     projectThumbnail.className = 'w-full object-top object-cover h-50 bg-top mb-3';
@@ -116,15 +116,14 @@ document.querySelectorAll('a.copy').forEach((link) => {
         e.preventDefault();
         try {
             await navigator.clipboard.writeText(link.dataset.copy);
-            link.textContent = 'คัดลอกแล้ว';
+            alert("คัดลอกสำเร็จ: " + link.dataset.copy); 
+           
         } catch {
-            link.textContent = 'คัดลอกไม่สำเร็จ';
+            alert("คัดลอกไม่สำเร็จ");
         }
-        setTimeout(() => (link.textContent = original), 1000);
+        
     });
 });
-
-
 
 //////////////////////// scroll spy //////////////////////////////
 

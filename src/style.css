@@ -33,7 +33,7 @@ html {
   z-index: 1;
 }
 
-.btn-skill{
+.btn-skill {
   padding: 20px;
   width: fit-content;
   background-color: #343434;
@@ -41,12 +41,13 @@ html {
   border-radius: 10px;
   cursor: pointer;
 }
-.btn-skill:hover{
+
+.btn-skill:hover {
   content: "";
   background-color: #414040;
   border: 2px solid #343434;
 
-  
+
 }
 
 /* Navigation Animation and nav*/
@@ -224,7 +225,7 @@ nav a:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.btn-project-disabled{
+.btn-project-disabled {
   width: 10rem;
   border: 1px solid #303030;
   border-radius: 999px;
@@ -235,29 +236,86 @@ nav a:hover {
   margin-top: auto;
   margin-bottom: 5rem;
 }
-
-
-#projectList {
-  article {
-    animation: imagtranslate linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 40%;
-  }
+.carousel-certfc{
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
 }
 
-@keyframes imagtranslate {
-  from {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all;
-  }
+.card-certfc::scroll-marker {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: #3b3b3b;
+  border-radius: 50%;
+}
 
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-  }
+.carousel {
+  anchor-name: --carousel;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-marker-group: after;
+}
+
+.carousel::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card-pj::scroll-marker {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: #3b3b3b;
+  border-radius: 50%;
+}
+
+.card-pj::scroll-marker:target-current {
+  background: #FEE100;
+}
+
+.carousel::scroll-button(left),
+.carousel::scroll-button(right) {
+  position: fixed;
+  content: "←";
+  border: none;
+  background: #FEE100;
+  color: black;
+  font-family: Consolas;
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding-bottom: .1rem;
+  cursor: pointer;
+  opacity: 1;
+  position-anchor: --carousel;
+  position-area: left center;
+  translate: 50%;
+}
+
+.carousel::scroll-button(right) {
+  content: "→";
+  position-area: right center;
+  translate: -50%;
+}
+
+.carousel::scroll-button(*):hover:not(:disabled) {
+  opacity: 1;
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel::scroll-button(*):disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .imagereveal {
@@ -303,8 +361,6 @@ nav a:hover {
 
 
 @media (max-width: 1024px) {
-
-
   #menuNav {
     align-items: center;
     position: fixed;
@@ -314,7 +370,16 @@ nav a:hover {
   .ative {
     color: #027BE6;
   }
+
+  .carousel::scroll-button(left) {
+    translate: 50%;
+  }
+
+  .carousel::scroll-button(right) {
+    translate: -50%;
+  }
 }
+
 
 
 @media (min-width: 1024px) {
@@ -358,14 +423,15 @@ nav a:hover {
     transform-origin: top center;
     overflow: hidden;
   }
- #icon-link{
 
-  a{
-    color: whitesmoke;
-    background-color: #343434;
-    border-radius: 50px ;
+  #icon-link {
+
+    a {
+      color: whitesmoke;
+      background-color: #343434;
+      border-radius: 50px;
+    }
   }
- }
 
   #track {
     display: flex;
@@ -403,10 +469,6 @@ nav a:hover {
     --target-brightness: 100%;
   }
 
-
-  footer {
-    clip-path: ellipse(75% 100% at 50% 100%);
-  }
 }
 
 @keyframes stacking {
