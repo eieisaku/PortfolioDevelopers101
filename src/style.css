@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@starting-style {
+  #project-info{
+    opacity: 0;
+    transform: translateY(20px) scale(.95);
+  }
+}
+
 :root {
   scrollbar-color: #86a4f7 #383851;
   --bg-color1: linear-gradient(0.25turn, #1F1F1F, #343434);
@@ -17,9 +24,13 @@
   animation: typing 1s steps(10) forwards, blink 0.7s step-end infinite;
 }
 
+body {
+  background-color: #027BE6;
+}
 
 html {
   scroll-behavior: smooth;
+  touch-action: manipulation;
 }
 
 #home::after {
@@ -236,21 +247,9 @@ nav a:hover {
   margin-top: auto;
   margin-bottom: 5rem;
 }
-.carousel-certfc{
-  scroll-snap-type: x mandatory;
-  overflow-x: auto;
-  scrollbar-width: none;
-  overscroll-behavior-x: contain;
-  scroll-behavior: smooth;
-}
 
-.card-certfc::scroll-marker {
-  content: '';
-  width: 1rem;
-  height: 1rem;
-  background: #3b3b3b;
-  border-radius: 50%;
-}
+
+/* card scroll */
 
 .carousel {
   anchor-name: --carousel;
@@ -259,7 +258,6 @@ nav a:hover {
   scrollbar-width: none;
   overscroll-behavior-x: contain;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
   scroll-marker-group: after;
 }
 
@@ -267,6 +265,11 @@ nav a:hover {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+  position: absolute;
+  position-anchor:--carousel;
+  top: anchor(bottom);          
+  justify-self: anchor-center;  
+  margin-top: 1rem;
 }
 
 .card-pj::scroll-marker {
@@ -318,35 +321,173 @@ nav a:hover {
   cursor: default;
 }
 
-.imagereveal {
-  animation: imageReveal both;
-  animation-timeline: view(50% 20%);
-  animation-range: entry 0 cover 40%;
+.carousel-certfc {
+  anchor-name: --my-carousel;
+  width: 55%;
+  height: 25rem;
+  display: flex;
+  overflow-x: auto;
+  border-radius: 20px;
+  gap: 5px;
+  background-color: antiquewhite;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-marker-group: after;
+}
+
+.carousel-certfc::scroll-marker-group {
+  position: absolute;
+  position-anchor: --my-carousel;
+  top: anchor(bottom);          
+  justify-self: anchor-center;  
+  margin-top: 1rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card-certfc::scroll-marker {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background: #3b3b3b;
+  border-radius: 50%;
+}
+
+.card-certfc::scroll-marker:target-current{
+  background: #FEE100;
+}
+
+
+/* content about */
+.sticky-wrapper {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10vh;
+}
+
+.tabs_left {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1.5rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.left-content.ct-1 {
+  opacity: 1;
+}
+
+.left-content {
+  height:fit-content;
+  text-align: center;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.tabs_right {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius--medium);
+  position: relative;
+  overflow: hidden;
+  grid-area: span 1 / span 1 / span 1 / span 1;
 
 }
 
-@keyframes imageReveal {
-  from {
-    filter: saturate(0) contrast(0);
-    opacity: 0;
-    scale: 0.95;
-    translate: 0 4rem;
-  }
+.tabs-image {
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
+	transition: opacity 0.5s, transform 0.5s;
+}
 
-  to {
-    filter: none;
-    opacity: 1;
-    scale: 1;
-    translate: 0 0;
+.tabs-image.ct-1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#home {
+  position: relative;
+}
+
+#about {
+  width: 100%;
+  position: sticky;
+  background: linear-gradient(#1F1F1F, #343434);
+  height: 300vh;
+
+  #track {
+    height: 50%;
+    display: grid;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    padding-left: 3.3%;
+    padding-right: 3.3%;
   }
+}
+
+
+
+@media(max-width: 576px) {
+  #about {
+    #track {
+      height: 75%;
+      grid-template-columns: 1fr;
+
+    }
+  }
+  .tabs_right {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+}
+
+[popover] {
+  width: min(25rem, 90vw );
+  border: none;
+  inset: 0;
+  margin: auto;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 50px black;
+  transition: all 0.35s ease;
+}
+
+
+[popover]::backdrop{
+  background-color: #07010152;
+  backdrop-filter: blur(4px);
 }
 
 #project {
   position: relative;
   height: 100vh;
   background-color: #054d8d;
+  animation: returnchangcolorbg;
+  animation-timeline: view();
+  animation-range: entry 0 cover 90%;
 
-  view-timeline-name: --project;
 }
 
 #certificates {
@@ -361,6 +502,32 @@ nav a:hover {
 
 
 @media (max-width: 1024px) {
+  .carousel {
+    scroll-snap-type: x mandatory;
+
+  }
+
+  .carousel-certfc {
+    width: 70%;
+    height: 100%;
+
+  }
+
+  .carousel-certfc::scroll-marker-group {
+  position: absolute;
+  bottom: 10px;          
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card-certfc::scroll-marker {
+  width: .5rem;
+  height: .5rem;
+}
+
+
+
   #menuNav {
     align-items: center;
     position: fixed;
@@ -408,24 +575,12 @@ nav a:hover {
 
   #home {
     top: 0;
-
     animation: hiddenpage linear forwards;
     animation-timeline: scroll();
     animation-range: entry 0 cover 40%;
   }
 
-  #about {
-    view-timeline-name: --cardsContainer;
-    --total-cards: 3;
-    --card-height: calc(100% / var(--total-cards));
-
-    height: 100rem;
-    transform-origin: top center;
-    overflow: hidden;
-  }
-
   #icon-link {
-
     a {
       color: whitesmoke;
       background-color: #343434;
@@ -440,53 +595,12 @@ nav a:hover {
     width: 100%;
     height: 65rem;
     gap: 10rem;
+
   }
 
-  .card {
-    --target-brightness: 50%;
-    transform-origin: top center;
-    position: sticky;
-    top: calc(var(--index) * 20px);
-
-    animation: stacking linear forwards;
-    animation-timeline: --cardsContainer;
-    animation-range-start: entry-crossing calc(var(--card-height) * (var(--index) - 1));
-    animation-range-end: exit-crossing calc(var(--card-height) * var(--index));
-
-    width: 50rem;
-    border-radius: 24px;
-    background: linear-gradient(0.25turn, #1F1F1F, #343434);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .35);
-  }
-
-
-  #card1 {
-    --index: 1;
-  }
-
-  #card2 {
-    --index: 2;
-    --target-brightness: 100%;
-  }
 
 }
 
-@keyframes stacking {
-  to {
-    transform: scale(calc(1 - 0.1 * (var(--total-cards) - var(--index))));
-    filter: brightness(var(--target-brightness));
-  }
-}
-
-@keyframes slide-content {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(calc(-100% + 60vh));
-  }
-}
 
 @keyframes hiddenpage {
   to {
@@ -497,6 +611,13 @@ nav a:hover {
 
 @keyframes returnchangcolorbg {
   from {
+    background: #343434;
+  }
+
+  to {
     background: #054d8d;
   }
 }
+
+
+/* test */

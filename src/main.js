@@ -18,33 +18,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-////////////////////////////////// button nextstate ///////////////////////////////////////////
-
-const track = document.getElementById('track');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-function scrollByCard(direction) {
-    const card = track.querySelector('article');
-    const distance = card.offsetWidth;
-    track.scrollBy({ left: direction * distance, behavior: 'smooth' });
-}
-
-prevBtn.addEventListener('click', () => scrollByCard(-4));
-nextBtn.addEventListener('click', () => scrollByCard(4));
-
-function updateButtons() {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    prevBtn.disabled = track.scrollLeft <= 2;
-    nextBtn.disabled = track.scrollLeft >= maxScroll - 2;
-}
-
-track.addEventListener('scroll', updateButtons);
-window.addEventListener('resize', updateButtons);
-updateButtons();
-
-
 ////////////// cards project ////////////////////
 
 let projectcards = [
@@ -150,3 +123,39 @@ function setAtive (){
 }
 
 window.addEventListener("scroll",setAtive)
+
+
+////// scroll about //////
+
+document.addEventListener("scroll", () => {
+  let scrollPosition = window.scrollY;
+  let windowHeight = window.innerHeight + 1050; // increasing the scroll distance before each class changes
+  let sections = document.querySelectorAll('.left-content');
+  let image = document.querySelectorAll('.tabs-image');
+  let lastSectionIndex = sections.length - 1;
+
+  sections.forEach((section, index) => {
+    if (scrollPosition >= (index * windowHeight) && scrollPosition < ((index + 1) * windowHeight)) {
+      section.classList.add('ct-1');
+      image[index].classList.add('ct-1');
+    } else {
+      // Remove is-1 class from all sections except the last one
+      if (index !== lastSectionIndex) {
+        section.classList.remove('ct-1');
+        image[index].classList.remove('ct-1');
+      }
+    }
+  });
+
+  // Keep is-1 class on the last section until user scrolls past it
+  if (scrollPosition > (lastSectionIndex * windowHeight)) {
+    sections[lastSectionIndex].classList.add('ct-1');
+    image[lastSectionIndex].classList.add('ct-1');
+  } else {
+    sections[lastSectionIndex].classList.remove('ct-1');
+    image[lastSectionIndex].classList.remove('ct-1');
+  }
+});
+
+////////////////
+
